@@ -1,8 +1,4 @@
-
-
-
-
-public class Planet{
+public class Planet {
 
     double xxPos;
     double yyPos;
@@ -13,6 +9,7 @@ public class Planet{
     
     public Planet(double xP, double yP, double xV,
                   double yV, double m, String img) {
+        
         this.xxPos = xP;
         this.yyPos = yP;      
         this.yyVel = yV;
@@ -22,8 +19,8 @@ public class Planet{
     }
 
     
-    public Planet(Planet p) 
-    {
+    public Planet(Planet p) {
+
         this.xxPos = p.xxPos;
         this.yyPos = p.yyPos;
         this.xxVel = p.xxVel;
