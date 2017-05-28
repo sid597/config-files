@@ -6,7 +6,10 @@ public class Planet {
     double xxVel;
     double mass;
     String imgFileName;
-    
+    double G = 6.67 * Math.pow(10, -11);
+
+
+
     public Planet(double xP, double yP, double xV,
                   double yV, double m, String img) {
         
@@ -43,12 +46,14 @@ public class Planet {
 
     }
 
+   public double calcForceExertedBy(Planet p) {
+       
+       /*Calculates force exerted by planets on each other */
 
 
-
-
-
-
+       double dis = this.calcDistance(p);
+       return ((G * this.mass * p.mass) / (dis * dis));
+  }
 
 
 
