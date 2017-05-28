@@ -50,12 +50,30 @@ public class Planet {
        
        /*Calculates force exerted by planets on each other */
 
-
        double dis = this.calcDistance(p);
        return ((G * this.mass * p.mass) / (dis * dis));
-  }
+   }
 
+   public double calcForceExertedByX(Planet p) {
+        
+       /* Calculate force in X direction */
 
-
+        double dx = Math.sqrt(Math.pow((p.xxPos - this.xxPos), 2));
+        double F = this.calcForceExertedBy(p);
+        double r = this.calcDistance(p);
+        
+        return (F * dx) / r;
+   }
+       
+    public double calcForceExertedByY(Planet p) {
+        
+        /* Calculate force in X direction */
+        
+        double dy = Math.sqrt(Math.pow((p.yyPos - this.yyPos), 2));
+        double F = this.calcForceExertedBy(p);
+        double r = this.calcDistance(p);
+        
+        return (F * dy) / r;
+   }
 }
 
