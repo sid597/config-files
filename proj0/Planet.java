@@ -7,7 +7,7 @@ public class Planet {
     double mass;
     String imgFileName;
     double G = 6.67 * Math.pow(10, -11);
-
+    Planet[] allPlanets;
 
 
     public Planet(double xP, double yP, double xV,
@@ -65,7 +65,7 @@ public class Planet {
         return (F * dx) / r;
    }
        
-    public double calcForceExertedByY(Planet p) {
+   public double calcForceExertedByY(Planet p) {
         
         /* Calculate force in X direction */
         
@@ -75,5 +75,49 @@ public class Planet {
         
         return (F * dy) / r;
    }
+
+   public double  calcNetForceExertedByX(Planet[] planets){
+
+       /* Calculate net force exerted by X */
+
+       double Force = 0;
+       for (Planet p : planets) {
+           if (p == this){
+               continue;
+           }
+           else {
+               Force += calcForceExertedByX(p);
+           }
+       }
+       return Force;
+
+  }
+
+   public double  calcNetForceExertedByY(Planet[] planets){
+
+       /* Calculate net force exerted by X */
+
+       double Force = 0;
+       for (Planet p : planets) {
+           if (p == this){
+               continue;
+           }
+           else {
+               Force += calcForceExertedByY(p);
+           }
+       }
+       return Force;
+
+  }
 }
+
+
+
+
+
+
+
+
+
+
 
