@@ -1,10 +1,9 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-set guifont=Source\ Code\ Pro\ Light:h20
 
-colorscheme light
 " set the runtime path to include Vundle and initialize
+
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
@@ -19,7 +18,12 @@ Plugin 'scrooloose/syntastic'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'bling/vim-airline'
 Plugin 'chriskempson/base16-vim'
+Plugin 'chriskempson/vim-tomorrow-theme'
+colorscheme Tomorrow-Night 
+Plugin 'vim-airline/vim-airline-themes'
 
+
+set guifont=Source\ Code\ Pro\:h5 
 
 
 " plugin on GitHub repo
@@ -58,7 +62,6 @@ set shiftwidth=4
 set expandtab
 set nu
 set softtabstop=4
-:set filetype=python
 syntax on
 :set ttyfast
 :set lazyredraw
@@ -70,6 +73,7 @@ nmap <silent> <leader>t :TestFile<CR>
 nmap <silent> <leader>a :TestSuite<CR>
 nmap <silent> <leader>l :TestLast<CR>
 
+set guifont=Source\ Code\ Pro\:h5
 
 set ttimeout
 set ttimeoutlen=20
@@ -96,7 +100,5 @@ set splitbelow
 set splitright
 
 
-let g:tmux_navigator_no_mappings = 1
 imap jk <esc>
-
 
