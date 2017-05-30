@@ -1,12 +1,9 @@
-<<<<<<< HEAD
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
 
 " set the runtime path to include Vundle and initialize
 
-=======
->>>>>>> 805c4f1dbdb976a0e67776f42dfeff578ce82b46
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
@@ -22,21 +19,14 @@ Plugin 'bling/vim-airline'
 Plugin 'chriskempson/base16-vim'
 Plugin 'chriskempson/vim-tomorrow-theme'
 Plugin 'vim-airline/vim-airline-themes'
-<<<<<<< HEAD
 Plugin 'davidhalter/jedi-vim'
 Plugin 'klen/python-mode'
 set guifont=Source\ Code\ Pro\:h5 
 Plugin 'powerline/powerline'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'nvie/vim-flake8'
-=======
 
-Plugin 'nvie/vim-flake8'
-Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 colorscheme Tomorrow-Night 
-
->>>>>>> 805c4f1dbdb976a0e67776f42dfeff578ce82b46
-
 
 " plugin on GitHub repo
 " plugin from http://vim-scripts.org/vim/scripts.html
@@ -64,7 +54,6 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
-<<<<<<< HEAD
 
 let mapleader=" "
 filetype plugin indent on
@@ -80,8 +69,6 @@ syntax on
 
 nmap <silent> <leader>s :TestNearest<CR> nmap <silent> <leader>t :TestFile<CR> nmap <silent> <leader>a :TestSuite<CR>
 nmap <silent> <leader>l :TestLast<CR>
-=======
->>>>>>> 805c4f1dbdb976a0e67776f42dfeff578ce82b46
 
 "leader
 let mapleader=" "
@@ -89,7 +76,6 @@ set breakindent
 "font
 set guifont=Source\ Code\ Pro\18 
 
-<<<<<<< HEAD
 set ttimeout
 set ttimeoutlen=20
 set notimeout
@@ -113,23 +99,19 @@ set history=500
 
 set splitbelow
 set splitright
-=======
 "colorscheme
 colorscheme Tomorrow-Night
->>>>>>> 805c4f1dbdb976a0e67776f42dfeff578ce82b46
 
 syntax on
 let g:python_host_prog = '/usr/bin/python2.7'
 let g:ycm_python_binary_path = '/usr/bin/python2.7'
 
-<<<<<<< HEAD
 imap jk <esc>
 "let g:airline_left_sep='>'
 "let g:airline_right_sep='<'
 let g:airline_detect_modified=1
 let g:airline_detect_paste=1
 let g:airline_powerline_fonts = 1                                            
-=======
 "show line number
 set number
 
@@ -235,4 +217,3 @@ let g:airline#extensions#tabline#show_splits = 0
 "" set nofoldenable
 
 let g:ycm_python_binary_path = '/usr/bin/python2.7'
->>>>>>> 805c4f1dbdb976a0e67776f42dfeff578ce82b46
