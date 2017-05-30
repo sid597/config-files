@@ -1,4 +1,5 @@
 set nocompatible              " be iMproved, required
+filetype off                  " required
 
 
 " set the runtime path to include Vundle and initialize
@@ -11,7 +12,7 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'ctrlpvim/ctrl.vim'
+"Plugin 'ctrlpvim/ctrl.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/syntastic'
 Plugin 'terryma/vim-multiple-cursors'
@@ -20,13 +21,24 @@ Plugin 'chriskempson/base16-vim'
 Plugin 'chriskempson/vim-tomorrow-theme'
 colorscheme Tomorrow-Night 
 Plugin 'vim-airline/vim-airline-themes'
-
-Plugin 'nvie/vim-flake8'
-Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
-
+Plugin 'davidhalter/jedi-vim'
+Plugin 'klen/python-mode'
 set guifont=Source\ Code\ Pro\:h5 
+Plugin 'powerline/powerline'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'nvie/vim-flake8'
 
 
+" plugin on GitHub repo
+" plugin from http://vim-scripts.org/vim/scripts.html
+" Plugin 'L9'
+" Git plugin not hosted on GitHub
+" git repos on your local machine (i.e. when working on your own plugin)
+" The sparkup vim script is in a subdirectory of this repo called vim.
+" Pass the path to set the runtimepath properly.
+" Install L9 and avoid a Naming conflict if you've already installed a
+" different version somewhere else.
+" Plugin 'ascenator/L9', {'name': 'newL9'}
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -43,20 +55,8 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
-let mapleader =" "
 
-let g:ycm_autoclose_preview_window_after_completion=1
-map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
-"python with virtualenv support
-py << EOF
-import os
-import sys
-if 'VIRTUAL_ENV' in os.environ:
-  project_base_dir = os.environ['VIRTUAL_ENV']
-  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-  execfile(activate_this, dict(__file__=activate_this))
-EOF
-
+let mapleader=" "
 filetype plugin indent on
 set tabstop=8
 set shiftwidth=4
@@ -67,20 +67,15 @@ syntax on
 :set ttyfast
 :set lazyredraw
 :set modeline
-let g:ycm_python_binary_path = '/usr/bin/python2.7'
 
-
-let python_highlight_all=1
-syntax on
+nmap <silent> <leader>s :TestNearest<CR> nmap <silent> <leader>t :TestFile<CR> nmap <silent> <leader>a :TestSuite<CR>
+nmap <silent> <leader>l :TestLast<CR>
 
 set guifont=Source\ Code\ Pro\:h5
 
 set ttimeout
 set ttimeoutlen=20
 set notimeout
-
-
-
 
 au WinLeave * set nocursorline nocursorcolumn
 au WinEnter * set cursorline
@@ -104,4 +99,8 @@ set splitright
 
 
 imap jk <esc>
-
+"let g:airline_left_sep='>'
+"let g:airline_right_sep='<'
+let g:airline_detect_modified=1
+let g:airline_detect_paste=1
+let g:airline_powerline_fonts = 1                                            
